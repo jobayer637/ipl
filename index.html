@@ -97,7 +97,7 @@
         setInterval(updateScore, 1000)
 
         function updateScore() {
-            let team = ['Royal Challengers Bangalore', 'Chennai Super Kings', 'Delhi Capitals', 'Sunrisers Hyderabad', 'Rajasthan Royals']
+            let team = ['Royal Challengers Bangalore', 'Chennai Super Kings', 'Delhi Capitals', 'Sunrisers Hyderabad', 'Rajasthan Royals', 'Kolkata Knight Riders']
 
             $.ajax({
                 url: 'https://cricapi.com/api/cricket',
@@ -107,7 +107,6 @@
                     apikey: "BqGkMVVLQLckisC35gu4Gw9JpNz2"
                 },
                 success: function (data) {
-                    console.log(data)
                     $.each(team, function (i, name) {
                         $.each(data.data, function (x, y) {
                             if (y.description.match(name)) {
